@@ -40,6 +40,10 @@ public class Program {
 				if(chessMatch.getPromoted()!= null) {
 					System.out.println("Ente com a peça para promoção (B/N/R/Q): ");
 					String type = sc.nextLine();
+					while(!type.equals("B") && !type.equals("N") && !type.equals("R") && !type.equals("Q")) {
+						System.out.print("Valor inválido! Entrecom com a peça para posição (B/Q/R/N): ");
+						type = sc.nextLine();
+					}
 					chessMatch.replacePromotedPiece(type);
 				}
 			}catch(ChessException e) {
